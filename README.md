@@ -414,3 +414,10 @@ En este proyecto, el sistema debe:
 
 ---
 
+##  Integrantes
+
+1. Daniel Gustavo Arango Yela
+2. .
+3. .
+
+---
