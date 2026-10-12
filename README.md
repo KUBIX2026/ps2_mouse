@@ -99,12 +99,12 @@ Movimiento en Y
 
 Por lo tanto, un paquete completo tiene la siguiente estructura:
 
-```text
-+--------+--------+--------+
+
+
 | Byte 1 | Byte 2 | Byte 3 |
-+--------+--------+--------+
+| :---: | :---: | :---: |
 | Estado |   X    |   Y    |
-+--------+--------+--------+
+
 ```
 
 ---
