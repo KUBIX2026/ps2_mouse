@@ -351,6 +351,6 @@ En este proyecto, el sistema debe:
 
 1. Daniel Gustavo Arango Yela
 2. Juan Sebastián Rincon Aguilera
-3. .
+3. David Fernando Fúquene Alvarez
 
 ---
