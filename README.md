@@ -280,24 +280,6 @@ El sistema utilizará:
 
 ---
 
-##  Aplicación en el proyecto
-
-En este proyecto, el sistema debe:
-
-1. Inicializar la interfaz PS/2.
-2. Esperar la respuesta de inicialización del mouse.
-3. Detectar el paquete de datos.
-4. Recibir los tres bytes del paquete.
-5. Verificar los bits de control.
-6. Extraer los valores de X y Y.
-7. Detectar el estado de los botones.
-8. Utilizar estos datos como entradas para la consola.
-
-
-
----
-
-
 ## Secuencia de inicialización del mouse PS/2
 
 ```mermaid
@@ -333,6 +315,26 @@ sequenceDiagram
 - **F2 – Consultar ID:** permite verificar el modo de funcionamiento; `03` identifica el modo con rueda.
 - **F4 – Enable data reporting:** habilita el envío automático de datos.
 - **Paquete de 4 bytes:** contiene el estado de los tres botones, los desplazamientos X/Y y el movimiento de la rueda.
+
+
+##  Aplicación en el proyecto
+
+En este proyecto, el sistema debe:
+
+1. Inicializar la interfaz PS/2.
+2. Esperar la respuesta de inicialización del mouse.
+3. Detectar el paquete de datos.
+4. Recibir los tres bytes del paquete.
+5. Verificar los bits de control.
+6. Extraer los valores de X y Y.
+7. Detectar el estado de los botones.
+8. Utilizar estos datos como entradas para la consola.
+
+
+
+---
+
+
 
 
 ##  Referencias
