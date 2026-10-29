@@ -220,7 +220,7 @@ El mouse transmite información cuando detecta:
 Es un modo utilizado principalmente para comprobar la comunicación entre el mouse y el sistema anfitrión.
 
 
-##  Comandos principales
+##  Comandos principales para el host
 
 | Comando | Función |
 |--------:|---------|
