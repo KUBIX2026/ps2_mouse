@@ -237,7 +237,16 @@ Es un modo utilizado principalmente para comprobar la comunicación entre el mou
 | `0xE6` | Escalamiento 1:1 |
 
 
-##  Códigos principales del mouse
+##  Códigos principales para el Mouse
+
+| Respuesta | Función |
+|---:|---|
+| `0xFA` | ACK (Acknowledge) |
+| `0xFE` | RESEND | 
+| `0xFC` | ERROR / BAT Failed | 
+| `0xAA` | BAT Passed | 
+| `0x00` | Mouse PS/2 estándar | 
+| `0x03` | IntelliMouse | 
 
 
 
