@@ -15,14 +15,19 @@
 - [Conexiones físicas del dispositivo](#conexiones-fisicas-del-dispositivo)
 - [Modos de operación](#modos-de-operación)
   - [Reset Mode](#reset-mode)
+  - [Remote Mode](#remote-mode)
   - [Stream Mode](#stream-mode)
   - [Wrap Mode](#wrap-mode)
 - [Comandos principales para el host](#comandos-principales-para-el-host)
-- [Códigos principales para el Mouse](#códigos-principales-para-el-mouse)
+- [Códigos principales del Mouse](#códigos-principales-del-mouse)
 - [Aplicación en el proyecto](#aplicación-en-el-proyecto)
+- [Diagrama de flujo del ratón](#diagrama-de-flujo-del-raton)
+  - [Diagrama para set-up del ratón](#diagrama-para-set-up-del-raton)
+  - [Diagrama para Respuestas del mouse](#diagrama-para-respuestas-del-mouse)
+  - [Diagrama para Lectura del mouse](#diagrama-para-lectura-del-mouse)
+- [Salida adaptada a un Control de videojuegos de NES](#salida-adaptada-a-un-control-de-videojuegos-de-nes)
 - [Referencias](#referencias)
 - [Integrantes](#integrantes)
-
 
 
 ##  Descripción
