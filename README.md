@@ -309,6 +309,9 @@ En este proyecto, el sistema debe:
 
 ### Diagrama para Lectura del mouse
 
+<img width="1092" height="8036" alt="Diagrama para lectura de mouse" src="https://github.com/user-attachments/assets/5152cc38-053b-48b9-89a2-76f3e9c9707a" />
+
+
 ## Salida adaptada a un Control de videojuegos de NES
 
 <table>
