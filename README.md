@@ -97,7 +97,36 @@ El mouse a utilizar necesita un procedimiento de setup para llegar a un modo de 
   </tbody>
 </table>
 
+##  Interpretación de los datos
 
+El primer byte permite determinar el estado de los botones y el signo del movimiento.
+
+El rango de movimiento representable para X y Y es:
+
+```text
+-255 a +255
+```
+El cuarto byte representa el movimiento de la rueda mediante un valor de **4 bits en complemento a dos**.
+
+```text
+Bit 7|6|5|4 → Extensión de signo
+Bit 3    ---→ Z3
+Bit 2    ---→ Z2
+Bit 1    ---→ Z1
+Bit 0    ---→ Z0
+```
+El un rango de
+
+```text
+-8 a +7
+```
+
+El envió y recepción de datos tienen la siguiente forma de onda:
+
+<img src="imagenes/señales.png" width="500" alt="Especificaciones de señal del ps/2">
+
+---
+---
 
 
 ## Secuencia de inicialización del mouse PS/2
@@ -151,46 +180,11 @@ El ps/2 del mouse consta de un conector de 5 o 6 pines (dependiendo del disposit
 
 
 
-## Forma de onda
-
-<img src="imagenes/señales.png" width="500" alt="Especificaciones de señal del ps/2">
 
 
 
-##  Interpretación de los datos
-
-El primer byte permite determinar el estado de los botones y el signo del movimiento.
-
-Los movimientos X e Y se representan mediante valores de **9 bits en complemento a dos**.
-
-El rango de movimiento representable es:
-
-```text
--255 a +255
-```
-El cuarto byte representa el movimiento de la rueda mediante un valor de **4 bits en complemento a dos**.
-
-```text
-Bit 7 → Extensión de signo
-Bit 6 → Extensión de signo
-Bit 5 → Extensión de signo
-Bit 4 → Extensión de signo
-Bit 3 → Z3
-Bit 2 → Z2
-Bit 1 → Z1
-Bit 0 → Z0
-```
-El rango es:
-
-```text
--8 a +7
-```
 
 
-
----
-
----
 
 
 ##  Modos de operación
@@ -198,7 +192,7 @@ El rango es:
 El protocolo PS/2 contempla diferentes modos de funcionamiento:
 
 ### Reset Mode
-
+---
 Se utiliza durante el encendido del mouse o cuando recibe el comando:
 
 ```text
@@ -208,7 +202,7 @@ Se utiliza durante el encendido del mouse o cuando recibe el comando:
 El mouse realiza el diagnóstico BAT y restablece sus parámetros.
 
 ### Stream Mode
-
+---
 Es el modo utilizado normalmente.
 
 El mouse transmite información cuando detecta:
@@ -217,10 +211,9 @@ El mouse transmite información cuando detecta:
 - Cambio en el estado de un botón.
 
 ### Wrap Mode
-
+---
 Es un modo utilizado principalmente para comprobar la comunicación entre el mouse y el sistema anfitrión.
 
----
 
 ##  Comandos principales
 
@@ -243,7 +236,7 @@ Es un modo utilizado principalmente para comprobar la comunicación entre el mou
 ---
 
 
-## Microsoft IntelliMouse
+## Detalles del Microsoft IntelliMouse
 
 Para este proyecto se utilizará principalmente el modo **Microsoft IntelliMouse**, que permite incorporar una rueda de desplazamiento al protocolo PS/2 estándar.
 
