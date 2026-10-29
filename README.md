@@ -24,7 +24,7 @@ La comunicación PS/2 utiliza dos señales principales:
 - **Clock:** señal de reloj.
 - **Data:** transmisión de datos de 12 bits.
 
-<img src="imagenes/caja_negra.png" width="700" alt="Conexiones del dispositivo ps/2">
+<img src="imagenes/caja_negra.png" width="1000" alt="Conexiones del dispositivo ps/2">
 
 El protocolo permite comunicación bidireccional, por lo que el sistema anfitrión también puede enviar comandos al mouse.
 
