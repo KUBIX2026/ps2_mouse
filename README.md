@@ -268,7 +268,7 @@ Es un modo utilizado principalmente para comprobar la comunicación entre el mou
 | `0xE6` | Escalamiento 1:1 |
 
 
-##  Códigos principales para el Mouse
+##  Códigos principales del Mouse
 
 | Comando | Función |
 |---:|---|
@@ -294,7 +294,12 @@ En este proyecto, el sistema debe:
 7. Detectar el estado de los botones.
 8. Convertir estos datos como entradas para la consola.
 
+## Diagrama de flujo de setup del raton
+### Diagrama para set-up del raton
+### Diagrama para Respuestas del mouse
 
+
+## Salida adaptada a un Control de videojuegos de NES
 
 ---
 
