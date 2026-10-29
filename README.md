@@ -13,7 +13,7 @@ El objetivo es utilizar un mouse PS/2 como periférico de entrada para una conso
 ##  Control de la consola
 
 
-<img src="imagenes/control.png" width="700" alt="Conexiones del dispositivo ps/2">
+<img src="imagenes/control.png" width="1000" alt="Conexiones del dispositivo ps/2">
 
 
 
