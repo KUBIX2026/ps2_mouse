@@ -2,7 +2,6 @@
 
 #  Interfaz de Mouse PS/2
 
-
 ## Índice
 
 - [Descripción](#descripción)
@@ -294,13 +293,58 @@ En este proyecto, el sistema debe:
 7. Detectar el estado de los botones.
 8. Convertir estos datos como entradas para la consola.
 
-## Diagrama de flujo de setup del raton
+## Diagrama de flujo del raton
 ### Diagrama para set-up del raton
+
+<img src="imagenes/setupAN.png" width="1000" alt="Conexiones del dispositivo ps/2">
+
 ### Diagrama para Respuestas del mouse
 
+<img src="imagenes/error.png" width="700" alt="Conexiones del dispositivo ps/2">
+
+### Diagrama para Lectura del mouse
 
 ## Salida adaptada a un Control de videojuegos de NES
 
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Bit 7</th>
+      <th>Bit 6</th>
+      <th>Bit 5</th>
+      <th>Bit 4</th>
+      <th>Bit 3</th>
+      <th>Bit 2</th>
+      <th>Bit 1</th>
+      <th>Bit 0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Botón</b></td>
+      <td>Derecha</td>
+      <td>Izquierda</td>
+      <td>Abajo</td>
+      <td>Arriba</td>
+      <td>Start</td>
+      <td>Select</td>
+      <td>B</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td><b>OUT</b></td>
+      <td>~Y sign bit</td>
+      <td>Y sign bit</td>
+      <td>X sign bit</td>
+      <td>~X sign bit</td>
+      <td>~Z sign bit</td>
+      <td>Z sign bit</td>
+      <td>Right Btn</td>
+      <td>Left Btn</td>
+    </tr>
+  </tbody>
+</table>
 ---
 
 
