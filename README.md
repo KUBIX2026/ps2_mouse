@@ -17,7 +17,7 @@ El objetivo es utilizar un mouse PS/2 como periférico de entrada para una conso
 
 
 
-##  Descripción
+##  Conexiones
 
 La comunicación PS/2 utiliza dos señales principales:
 
