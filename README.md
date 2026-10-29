@@ -54,6 +54,9 @@ El identificador `0x00` corresponde al mouse PS/2 estándar.
 
 ---
 
+
+### Detalles del Microsoft IntelliMouse
+
 El mouse a utilizar necesita un procedimiento de setup para llegar a un modo de Microsoft IntelliMouse, el cual proporciona información sobre:
 
 <table>
@@ -163,10 +166,12 @@ sequenceDiagram
 - **FA – ACK:** confirma la recepción y aceptación de un comando.
 - **AA – Self-test OK:** indica que el autotest terminó correctamente.
 - **00 – ID inicial:** identifica el dispositivo antes de configurar el modo de rueda.
-- **F3 – Configurar muestreo:** permite enviar la secuencia especial de velocidades `200, 100, 80` para activar el modo IntelliMouse.
-- **F2 – Consultar ID:** permite verificar el modo de funcionamiento; `03` identifica el modo con rueda.
+- **F3 – Configurar muestreo:** permite enviar la secuencia especial de velocidades `200 (F3 C8), 100 (F3 64), 80 (F3 50)` para activar el modo IntelliMouse.
+- **F2 – Consultar ID:** permite verificar el modo de funcionamiento; `0x03` identifica el modo con rueda.
 - **F4 – Enable data reporting:** habilita el envío automático de datos.
 - **Paquete de 4 bytes:** contiene el estado de los tres botones, los desplazamientos X/Y y el movimiento de la rueda.
+
+
 
 
 
@@ -234,56 +239,6 @@ Es un modo utilizado principalmente para comprobar la comunicación entre el mou
 | `0xE6` | Escalamiento 1:1 |
 
 ---
-
-
-## Detalles del Microsoft IntelliMouse
-
-Para este proyecto se utilizará principalmente el modo **Microsoft IntelliMouse**, que permite incorporar una rueda de desplazamiento al protocolo PS/2 estándar.
-
-A diferencia del mouse PS/2 estándar, que utiliza paquetes de 3 bytes, el modo IntelliMouse utiliza paquetes de **4 bytes**.
-
-###  Activación del modo IntelliMouse
-
-Para activar el modo IntelliMouse se utiliza la siguiente secuencia:
-
-```text
-F3 C8
-F3 64
-F3 50
-F2
-```
-
-Donde:
-
-- `F3 C8` → Configura una tasa de muestreo de 200 informes/s.
-- `F3 64` → Configura una tasa de muestreo de 100 informes/s.
-- `F3 50` → Configura una tasa de muestreo de 80 informes/s.
-- `F2` → Solicita el identificador del mouse.
-
-Si el mouse es compatible con IntelliMouse, responderá:
-
-```text
-03
-```
-
-El identificador `0x03` corresponde al modo IntelliMouse con rueda.
-
-
-### Byte 4 — Movimiento de la rueda
-
-
-El sistema utilizará:
-
-- Movimiento en X.
-- Movimiento en Y.
-- Botón izquierdo.
-- Botón derecho.
-- Botón central.
-- Movimiento de la rueda.
-
----
-
-
 
 
 ##  Aplicación en el proyecto
