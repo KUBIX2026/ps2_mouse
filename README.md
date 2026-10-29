@@ -239,7 +239,7 @@ Es un modo utilizado principalmente para comprobar la comunicación entre el mou
 
 ##  Códigos principales para el Mouse
 
-| Respuesta | Función |
+| Comando | Función |
 |---:|---|
 | `0xFA` | ACK (Acknowledge) |
 | `0xFE` | RESEND | 
