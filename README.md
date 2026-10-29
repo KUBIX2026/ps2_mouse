@@ -48,7 +48,7 @@ La comunicación PS/2 utiliza dos señales principales:
 - **Clock:** señal de reloj.
 - **Data:** transmisión de datos de 12 bits.
 
-<img src="imagenes/caja.png" width="1000" alt="Conexiones del dispositivo ps/2">
+<img src="imagenes/cajanegra.png" width="1000" alt="Conexiones del dispositivo ps/2">
 
 El protocolo permite comunicación bidireccional, por lo que el sistema anfitrión también puede enviar comandos al mouse.
 
@@ -219,7 +219,6 @@ El ps/2 del mouse consta de un conector de 5 o 6 pines (dependiendo del disposit
 El protocolo PS/2 contempla diferentes modos de funcionamiento:
 
 ### Reset Mode
----
 Se utiliza durante el encendido del mouse o cuando recibe el comando:
 
 ```text
@@ -228,8 +227,17 @@ Se utiliza durante el encendido del mouse o cuando recibe el comando:
 
 El mouse realiza el diagnóstico BAT y restablece sus parámetros.
 
+* **Sample Rate:** 100 samples/sec
+* **Resolution:** 4 counts/mm
+* **Scaling:** 1:1
+* **Data Reporting:** Disabled
+
+### Remote Mode
+
+Funciona para enviar comandos al mouse, en caso de estar en el **stream mode** anteriormente, se debe mantener el clock en LOW por un tiempo para no tener interrupciones en la comunicacion bidireccional
+
+
 ### Stream Mode
----
 Es el modo utilizado normalmente.
 
 El mouse transmite información cuando detecta:
@@ -238,8 +246,7 @@ El mouse transmite información cuando detecta:
 - Cambio en el estado de un botón.
 
 ### Wrap Mode
----
-Es un modo utilizado principalmente para comprobar la comunicación entre el mouse y el sistema anfitrión.
+Es un modo utilizado principalmente para comprobar la comunicación entre el mouse y el sistema anfitrión, donde regresa cualquier byte enviado.
 
 
 ##  Comandos principales para el host
