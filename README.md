@@ -36,7 +36,25 @@ El mouse PS/2 utiliza una comunicación serial síncrona entre el dispositivo y 
 
 Cuando el ratón PS2 envía información, debe enviar tres paquetes de datos consecutivos. Cada paquete contiene información diferente sobre el botón pulsado, el movimiento y la dirección del mismo.
 
-El mouse a utilizar proporciona información sobre:
+Al encenderse, el mouse realiza un proceso de autodiagnóstico denominado **BAT (Basic Assurance Test)**.
+
+Si el diagnóstico es exitoso, el mouse envía un código de confirmacion:
+
+```text
+0xAA
+```
+
+Posteriormente envía su identificador:
+
+```text
+0x000
+```
+
+El identificador `0x00` corresponde al mouse PS/2 estándar.
+
+---
+
+El mouse a utilizar necesita un procedimiento de setup para llegar a un modo de Microsoft IntelliMouse, el cual proporciona información sobre:
 
 <table>
   <thead>
@@ -79,26 +97,13 @@ El mouse a utilizar proporciona información sobre:
   </tbody>
 </table>
 
-Al encenderse, el mouse realiza un proceso de autodiagnóstico denominado **BAT (Basic Assurance Test)**.
 
-Si el diagnóstico es exitoso, el mouse envía un código de confirmacion:
-
-```text
-0xAA
-```
-
-Posteriormente envía su identificador:
-
-```text
-0x000
-```
-
-El identificador `0x00` corresponde al mouse PS/2 estándar.
-
----
 
 
 ## Secuencia de inicialización del mouse PS/2
+
+Para activar el modo Microsoft IntelliMouse se debe seguir la siguiente secuencia:
+
 
 ```mermaid
 sequenceDiagram
@@ -151,43 +156,6 @@ El ps/2 del mouse consta de un conector de 5 o 6 pines (dependiendo del disposit
 <img src="imagenes/señales.png" width="500" alt="Especificaciones de señal del ps/2">
 
 
-
-##  Paquete de datos
-
-Un mouse PS/2 estándar transmite la información de movimiento mediante paquetes de **4 bytes**.
-
-### Byte 1
-
-```text
-Bit 7    Y Overflow
-Bit 6    X Overflow
-Bit 5    Y Sign
-Bit 4    X Sign
-Bit 3    Siempre 1
-Bit 2    Botón central
-Bit 1    Botón derecho
-Bit 0    Botón izquierdo
-```
-
-### Byte 2
-
-```text
-Movimiento en X
-```
-
-### Byte 3
-
-```text
-Movimiento en Y
-```
-
-### Byte 4
-
-```text
-Movimiento en Z
-```
-
----
 
 ##  Interpretación de los datos
 
