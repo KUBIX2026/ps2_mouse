@@ -2,6 +2,30 @@
 
 #  Interfaz de Mouse PS/2
 
+
+## Índice
+
+- [Descripción](#descripción)
+- [Control de la consola](#control-de-la-consola)
+- [Conexiones](#conexiones)
+- [Funcionamiento en Mouse](#funcionamiento-en-mouse)
+- [Detalles del Microsoft IntelliMouse](#detalles-del-microsoft-intellimouse)
+- [Interpretación de los datos](#interpretación-de-los-datos)
+- [Secuencia de inicialización del mouse PS/2 Microsoft IntelliMouse](#secuencia-de-inicialización-del-mouse-ps2-microsoft-intellimouse)
+  - [Descripción de la secuencia](#descripción-de-la-secuencia)
+- [Conexiones físicas del dispositivo](#conexiones-fisicas-del-dispositivo)
+- [Modos de operación](#modos-de-operación)
+  - [Reset Mode](#reset-mode)
+  - [Stream Mode](#stream-mode)
+  - [Wrap Mode](#wrap-mode)
+- [Comandos principales para el host](#comandos-principales-para-el-host)
+- [Códigos principales para el Mouse](#códigos-principales-para-el-mouse)
+- [Aplicación en el proyecto](#aplicación-en-el-proyecto)
+- [Referencias](#referencias)
+- [Integrantes](#integrantes)
+
+
+
 ##  Descripción
 
 Este proyecto implementa la comunicación entre un mouse y un sistema anfitrión utilizando el protocolo **PS/2**.
