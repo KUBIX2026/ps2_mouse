@@ -97,6 +97,45 @@ El identificador `0x00` corresponde al mouse PS/2 estándar.
 
 ---
 
+
+## Secuencia de inicialización del mouse PS/2
+
+```mermaid
+sequenceDiagram
+    participant H as Host
+    participant M as Mouse
+
+    H->>M: FF - Reset
+    M-->>H: FA - ACK
+    M-->>H: AA - Self-test OK
+    M-->>H: 00 - ID inicial
+
+    H->>M: F3 - Configurar muestreo
+    H->>M: C8, 64, 50 - Secuencia para rueda
+    M-->>H: FA - ACK después de cada dato
+
+    H->>M: F2 - Consultar ID
+    M-->>H: FA, 03 - Mouse con rueda
+
+    H->>M: F4 - Enable data reporting
+    M-->>H: FA - ACK
+
+    M-->>H: Paquete de 4 bytes
+```
+
+### Descripción de la secuencia
+
+- **FF – Reset:** reinicia el mouse.
+- **FA – ACK:** confirma la recepción y aceptación de un comando.
+- **AA – Self-test OK:** indica que el autotest terminó correctamente.
+- **00 – ID inicial:** identifica el dispositivo antes de configurar el modo de rueda.
+- **F3 – Configurar muestreo:** permite enviar la secuencia especial de velocidades `200, 100, 80` para activar el modo IntelliMouse.
+- **F2 – Consultar ID:** permite verificar el modo de funcionamiento; `03` identifica el modo con rueda.
+- **F4 – Enable data reporting:** habilita el envío automático de datos.
+- **Paquete de 4 bytes:** contiene el estado de los tres botones, los desplazamientos X/Y y el movimiento de la rueda.
+
+
+
 ## Conexiones fisicas del dispositivo
 
 El ps/2 del mouse consta de un conector de 5 o 6 pines (dependiendo del dispositivo), los cuales asignan 4 pines en ambos casos, y es posible usar un adaptador de uno a otro, o lograr usar algún pin para otro proposito.
@@ -283,41 +322,7 @@ El sistema utilizará:
 
 ---
 
-## Secuencia de inicialización del mouse PS/2
 
-```mermaid
-sequenceDiagram
-    participant H as Host
-    participant M as Mouse
-
-    H->>M: FF - Reset
-    M-->>H: FA - ACK
-    M-->>H: AA - Self-test OK
-    M-->>H: 00 - ID inicial
-
-    H->>M: F3 - Configurar muestreo
-    H->>M: C8, 64, 50 - Secuencia para rueda
-    M-->>H: FA - ACK después de cada dato
-
-    H->>M: F2 - Consultar ID
-    M-->>H: FA, 03 - Mouse con rueda
-
-    H->>M: F4 - Enable data reporting
-    M-->>H: FA - ACK
-
-    M-->>H: Paquete de 4 bytes
-```
-
-### Descripción de la secuencia
-
-- **FF – Reset:** reinicia el mouse.
-- **FA – ACK:** confirma la recepción y aceptación de un comando.
-- **AA – Self-test OK:** indica que el autotest terminó correctamente.
-- **00 – ID inicial:** identifica el dispositivo antes de configurar el modo de rueda.
-- **F3 – Configurar muestreo:** permite enviar la secuencia especial de velocidades `200, 100, 80` para activar el modo IntelliMouse.
-- **F2 – Consultar ID:** permite verificar el modo de funcionamiento; `03` identifica el modo con rueda.
-- **F4 – Enable data reporting:** habilita el envío automático de datos.
-- **Paquete de 4 bytes:** contiene el estado de los tres botones, los desplazamientos X/Y y el movimiento de la rueda.
 
 
 ##  Aplicación en el proyecto
