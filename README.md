@@ -8,20 +8,23 @@ Este proyecto implementa la comunicación entre un mouse y un sistema anfitrión
 
 El objetivo es utilizar un mouse PS/2 como periférico de entrada para una consola de videojuegos, interpretando los datos enviados por el mouse para obtener información sobre el movimiento y el estado de sus botones.
 
+
+
+##  Control de la consola
+
+
+<img src="imagenes/control.png" width="700" alt="Conexiones del dispositivo ps/2">
+
+
+
+##  Descripción
+
 La comunicación PS/2 utiliza dos señales principales:
 
 - **Clock:** señal de reloj.
-- **Data:** transmisión de datos.
+- **Data:** transmisión de datos de 12 bits.
 
-```text
-Mouse                  Sistema
-  │                      │
-  ├────── CLOCK ────────►
-  │                      │
-  ├────── DATA ─────────►
-  │                      │
-  └──────────────────────┘
-```
+<img src="imagenes/caja_negra.png" width="700" alt="Conexiones del dispositivo ps/2">
 
 El protocolo permite comunicación bidireccional, por lo que el sistema anfitrión también puede enviar comandos al mouse.
 
