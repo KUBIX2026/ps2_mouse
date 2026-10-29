@@ -55,7 +55,7 @@ El identificador `0x00` corresponde al mouse PS/2 estándar.
 ---
 
 
-### Detalles del Microsoft IntelliMouse
+## Detalles del Microsoft IntelliMouse
 
 El mouse a utilizar necesita un procedimiento de setup para llegar a un modo de Microsoft IntelliMouse, el cual proporciona información sobre:
 
@@ -126,13 +126,11 @@ El un rango de
 
 El envió y recepción de datos tienen la siguiente forma de onda:
 
-<img src="imagenes/señales.png" width="500" alt="Especificaciones de señal del ps/2">
+<img src="imagenes/señales.png" width="800" alt="Especificaciones de señal del ps/2">
 
 ---
----
 
-
-## Secuencia de inicialización del mouse PS/2
+## Secuencia de inicialización del mouse PS/2 Microsoft IntelliMouse
 
 Para activar el modo Microsoft IntelliMouse se debe seguir la siguiente secuencia:
 
@@ -238,7 +236,9 @@ Es un modo utilizado principalmente para comprobar la comunicación entre el mou
 | `0xE7` | Escalamiento 2:1 |
 | `0xE6` | Escalamiento 1:1 |
 
----
+
+##  Códigos principales del mouse
+
 
 
 ##  Aplicación en el proyecto
@@ -248,11 +248,11 @@ En este proyecto, el sistema debe:
 1. Inicializar la interfaz PS/2.
 2. Esperar la respuesta de inicialización del mouse.
 3. Detectar el paquete de datos.
-4. Recibir los tres bytes del paquete.
+4. Recibir los cuatro bytes del paquete.
 5. Verificar los bits de control.
-6. Extraer los valores de X y Y.
+6. Extraer los valores de X, Y y Z.
 7. Detectar el estado de los botones.
-8. Utilizar estos datos como entradas para la consola.
+8. Convertir estos datos como entradas para la consola.
 
 
 
