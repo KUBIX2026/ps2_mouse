@@ -25,6 +25,7 @@
   - [Diagrama para set-up del ratón](#diagrama-para-set-up-del-raton)
   - [Diagrama para Respuestas del mouse](#diagrama-para-respuestas-del-mouse)
   - [Diagrama para Lectura del mouse](#diagrama-para-lectura-del-mouse)
+  - [Diagrama de bloques para Escritura del mouse](#diagrama-de-bloques-para-escritura-del-mouse)
 - [Salida adaptada a un Control de videojuegos de NES](#salida-adaptada-a-un-control-de-videojuegos-de-nes)
 - [Referencias](#referencias)
 - [Integrantes](#integrantes)
@@ -311,6 +312,10 @@ En este proyecto, el sistema debe:
 
 <img width="1092" height="8036" alt="Diagrama para lectura de mouse" src="https://github.com/user-attachments/assets/5152cc38-053b-48b9-89a2-76f3e9c9707a" />
 
+### Diagrama de bloques para Escritura del mouse
+
+<img  src="Diagramas/DiagramadebloquesESCRITURA.drawio.png" width="700"
+/>
 
 ## Salida adaptada a un Control de videojuegos de NES
 
